@@ -1,0 +1,46 @@
+﻿@{
+    ViewBag.Title = "Акции";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+<div class="containerList">
+    <div class="row">
+    </div>
+    <div class="row">
+        <div class="slider1 span12"></div>
+    </div>  
+    <div class="row">
+        <div class="content span10">
+            <div class="b-bs">
+                <table class="b-bs__table">
+                    <tr class="b-ts__trade-item b-ts__trade-item_type_stock">
+                        <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/certef.jpg" alt="Сертификат" /></td>
+                        <td class="b-ts_description">Описание акции</td>
+                      <td class="b-ts__actions-wrapper">
+                        <a class="b-bs_action b-bs_action_type_buy"
+                        href="@Url.Action("AddEntity", "TradeBasket", new { entityType = AndreyTradeProject.Controllers.Entity._Type.Stock })" title="купить">Купить</a>
+                      </td>
+                    </tr>
+                    <tr class="b-ts__trade-item b-ts__trade-item_type_microphone">
+                        <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/naysh.jpg" alt="Сертификат" /></td>
+                        <td class="b-ts_description">Описание микронаушника</td>
+                        <td class="b-ts__actions-wrapper"><a class="b-bs_action b-bs_action_type_buy" 
+                                                             href="@Url.Action("AddEntity", "TradeBasket", new { entityType = AndreyTradeProject.Controllers.Entity._Type.Microphone })" title="купить">Купить</a></td>
+                    </tr>
+                    <tr class="b-ts__trade-item b-ts__trade-item_type_med">
+                        <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/fon.jpg" alt="Сертификат" /></td>
+                        <td class="b-ts_description">Описание меда</td>
+                        <td class="b-ts__actions-wrapper"><a class="b-bs_action b-bs_action_type_buy" href="#" title="купить">Купить</a></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="footer span12"><small>2014 © Акции от 27.07.2014</small></div>
+    </div>
+</div>
+
+
+
+
+

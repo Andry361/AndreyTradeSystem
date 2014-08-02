@@ -1,0 +1,36 @@
+﻿@model AndreyTradeProject.Models.PurchaseListModel
+
+@{
+  ViewBag.Title = "Список покупок";
+  Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+  table {
+    width: 100%;
+  }
+</style>
+
+<section class="b-sl">
+  <table>
+    <thead>
+      <tr>
+        <td>Имя покупателя</td>
+        <td>Фамилия покупателя</td>
+        <td>Сертификат покупателя</td>
+      </tr>
+    </thead>
+
+    <tbody>
+      @foreach(var purchase in Model.Purchases)
+      {
+        <tr>
+          <td>@purchase.User.Name</td>
+          <td>@purchase.User.Surname</td>
+          <td>@purchase.Stocks[0].Number</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+</section><!--B: Stock list-->

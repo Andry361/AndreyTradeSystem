@@ -1,0 +1,45 @@
+﻿@model AndreyTradeProject.Models.TradeBasketModel
+
+@{
+  ViewBag.Title = "Покупки";
+  Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<style>
+  table {
+    margin: 50px 0;
+    width: 100%;
+  }
+
+    table tr {
+      height: 25px;
+      line-height: 25px;
+    }
+
+      table tr:nth-child(2n) {
+        background-color: rgb(245, 245, 245);
+      }
+</style>
+
+<table style="width: 100%;">
+  <tr>
+    <td>Имя</td>
+    <td>@Html.DisplayTextFor(x => x.User)</td>
+  </tr>
+
+  @using (Html.BeginForm("PlaceAnOrder", "TradeBasket"))
+  {
+    foreach (var purchase in @Model.Purchases)
+    {
+      <tr>
+        <td>Покупка</td>
+        <td>@purchase.Type</td>
+        <td>@purchase.Count</td>
+      </tr>
+    }
+    
+    <input type="hidden" name="stockCount" value="@Model.Purchases.Count()" />
+    
+    <input type="submit" value="Оформить" />
+  }
+</table>

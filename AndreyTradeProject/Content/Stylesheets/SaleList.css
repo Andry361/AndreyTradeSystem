@@ -1,0 +1,54 @@
+* {
+    transition: all .5s;
+    box-sizing: border-box;
+}
+body {
+    font: 1em 'PT Sans', Arial, Helvetica, sans-serif;
+}
+
+
+/* CSS Grid
+===================================*/
+
+.containerList {
+	width: 940px;
+	margin: 0 auto;
+}
+
+.row {
+	margin-bottom: 20px;
+}
+
+
+
+
+
+.span1 	{	width:  60px }
+.span2 	{	width: 140px }
+.span3 	{	width: 220px }
+.span4 	{	width: 300px }
+.span5 	{	width: 380px }
+.span6 	{	width: 460px }
+.span7 	{	width: 540px }
+.span8 	{	width: 620px }
+.span9 	{	width: 700px }
+.span10 {	width: 780px }
+.span11 {	width: 860px }
+.span12 {	width: 940px }
+
+/* Main
+===================================*/
+
+.slider1 {
+	height: 250px;
+	background: url(sale.jpg);
+	box-shadow: 0 5px 5px rgba(0,0,0,.2);
+}
+
+
+.footer {
+	color: #444;
+	text-align: center;
+	border-top: 1px dashed #888;
+	padding: 40px 0;
+}
