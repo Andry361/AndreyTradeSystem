@@ -10,6 +10,6 @@ namespace AndreyTradeProject.Models
   public class TradeBasketModel
   {
     public D_User User { get; set; }
-    public IEnumerable<Entity> Purchases { get; set; }
+    public IEnumerable<D_Purchase> Purchases { get; set; }
   }
 }

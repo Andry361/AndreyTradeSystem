@@ -70,11 +70,29 @@ namespace AndreyTradeProject.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Необходимо заполнить поля имя.
+        ///   Looks up a localized string similar to Необходимо заполнить поле email.
+        /// </summary>
+        public static string UserModel__ValidationException_EmailRequired {
+            get {
+                return ResourceManager.GetString("UserModel__ValidationException_EmailRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Необходимо заполнить поле имя.
         /// </summary>
         public static string UserModel__ValidationException_NameRequired {
             get {
                 return ResourceManager.GetString("UserModel__ValidationException_NameRequired", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Необходимо заполить поле телефонный номер.
+        /// </summary>
+        public static string UserModel__ValidationException_PhoneNUmberRequired {
+            get {
+                return ResourceManager.GetString("UserModel__ValidationException_PhoneNUmberRequired", resourceCulture);
             }
         }
     }

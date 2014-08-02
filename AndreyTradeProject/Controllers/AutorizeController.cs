@@ -20,7 +20,9 @@ namespace AndreyTradeProject.Controllers
         {
           Name = model.Name,
           Patronimic = model.Patronimic,
-          Surname = model.Surname
+          Surname = model.Surname,
+          Email = model.Email,
+          PhoneNumber = model.PhoneNumber
         };
 
         _NhibernateSession.Save(d_user);

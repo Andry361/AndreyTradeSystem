@@ -151,6 +151,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Lib\AuthorizeAttribute.cs" />
+    <Compile Include="Lib\Email.cs" />
     <Compile Include="Lib\Excel.cs" />
     <Compile Include="Lib\Session.cs" />
     <Compile Include="Models\PurchaseListModel.cs" />

@@ -21,6 +21,8 @@ namespace Data
     public virtual string Name { get; set; }
     public virtual string Surname { get; set; }
     public virtual string Patronimic { get; set; }
+    public virtual string Email { get; set; }
+    public virtual string PhoneNumber { get; set; }
   }
 
   public class D_Stock : D_BaseObject
@@ -62,6 +64,8 @@ namespace Data
       Map(x => x.Name).Not.Nullable().Length(255);
       Map(x => x.Surname).Not.Nullable().Length(255);
       Map(x => x.Patronimic).Not.Nullable().Length(255);
+      Map(x => x.Email).Not.Nullable().Length(100);
+      Map(x => x.PhoneNumber).Not.Nullable().Length(20);
     }
   }
 

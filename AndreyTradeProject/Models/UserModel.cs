@@ -15,5 +15,9 @@ namespace AndreyTradeProject.Models
     public string Surname { get; set; }
     [Required]
     public string Patronimic { get; set; }
+    [Required(ErrorMessageResourceName = "UserModel__ValidationException_EmailRequired", ErrorMessageResourceType = typeof(AndreyTradeProject.Properties.GeneralResource))]
+    public string Email { get; set; }
+    [Required(ErrorMessageResourceName = "UserModel__ValidationException_PhoneNUmberRequired", ErrorMessageResourceType = typeof(AndreyTradeProject.Properties.GeneralResource))]
+    public string PhoneNumber { get; set; }
   }
 }

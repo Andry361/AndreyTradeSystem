@@ -23,23 +23,28 @@
 
 <table style="width: 100%;">
   <tr>
-    <td>Имя</td>
-    <td>@Html.DisplayTextFor(x => x.User)</td>
+    <td>Имя покупателя</td>
+    <td>Количество купленых сертификатов</td>
   </tr>
 
   @using (Html.BeginForm("PlaceAnOrder", "TradeBasket"))
   {
-    foreach (var purchase in @Model.Purchases)
+    foreach (var group in Model.Purchases.GroupBy(x => x.User.Id))
     {
+      if (group.Count() == 0)
+      {
+        continue;
+      }
+
       <tr>
-        <td>Покупка</td>
-        <td>@purchase.Type</td>
-        <td>@purchase.Count</td>
+        <td>@(group.ElementAt(0).User.Name)</td>
+        <td>@group.Count()</td>
       </tr>
     }
-    
+
     <input type="hidden" name="stockCount" value="@Model.Purchases.Count()" />
-    
+
     <input type="submit" value="Оформить" />
   }
 </table>
+

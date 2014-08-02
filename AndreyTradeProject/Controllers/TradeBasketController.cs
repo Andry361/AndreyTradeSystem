@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using NHibernate.Linq;
+using AndreyTradeProject.Lib;
 
 namespace AndreyTradeProject.Controllers
 {
@@ -17,7 +18,7 @@ namespace AndreyTradeProject.Controllers
       TradeBasketModel model = new TradeBasketModel
       {
         User = AndreyTradeProject.Lib.Session.Default.GetCurrentUser(_NhibernateSession),
-        Purchases = AndreyTradeProject.Lib.Session.Default.GetPurchases()
+        Purchases = AndreyTradeProject.Lib.Session.Default.GetPurchases(_NhibernateSession)
       };
 
       return View(model);
@@ -77,9 +78,13 @@ namespace AndreyTradeProject.Controllers
         purchase.Stocks.Add(nextStock);
 
         _NhibernateSession.Save(purchase);
-
-        //((List<Entity>)Session["Purchases"]).RemoveAt((int)index);
       }
+
+      #region Отпрака email
+      
+
+      IEmailSender email = new Email(null);
+      #endregion
 
       return View("_Success");
     }
