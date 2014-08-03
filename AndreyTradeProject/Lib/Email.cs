@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Mail;
 using System.Web;
 
@@ -15,35 +16,36 @@ namespace AndreyTradeProject.Lib
     /// Отправить сообщение
     /// </summary>
     /// <returns>True - в случаи успешной отправки, false - в ином случаи</returns>
-    bool Send();
+      void Send();
   }
 
   public class Email : IEmailSender
   {
+
+    private const string _SendMailAdress = "Hsmel73@mail.ru";
+    private readonly string _EmailAddress;
+
     public Email(string sendAddress)
     {
       _EmailAddress = sendAddress;
     }
 
-    private const string _SendMailAdress = "yourmail@mail.ru";
-    private readonly string _EmailAddress;
-
-    public bool Send()
+    public void Send()
     {
-      return false;
-      //TODO:Андрюха Логика отправки email
-
-      //using (MailMessage mail = new MailMessage(_SendMailAdress, _EmailAddress))
-      //{
-      //  SmtpClient client = new SmtpClient();
-      //  client.Port = 25;
-      //  client.DeliveryMethod = SmtpDeliveryMethod.Network;
-      //  client.UseDefaultCredentials = false;
-      //  client.Host = "smtp.google.com";
-      //  mail.Subject = "this is a test email.";
-      //  mail.Body = "this is my test email body";
-      //  client.Send(mail);
-      //}
+        using (MailMessage mm = new MailMessage(_SendMailAdress, _EmailAddress))
+        {
+            mm.Subject = "Номер сертификата!";
+            mm.Body = "Mail Body";
+            mm.IsBodyHtml = false;
+            using (SmtpClient sc = new SmtpClient("smtp.mail.ru", 25))
+            {
+                sc.EnableSsl = true;
+                sc.DeliveryMethod = SmtpDeliveryMethod.Network;
+                sc.UseDefaultCredentials = false;
+                sc.Credentials = new NetworkCredential(_SendMailAdress, "180992nen2011djnf");
+                sc.Send(mm);          
+            }
+        }
     }
   }
 }

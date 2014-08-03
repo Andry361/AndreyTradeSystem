@@ -9,17 +9,16 @@ using System.Threading.Tasks;
 
 namespace TestProject
 {
-  //TODO:Андрей Реализивать функционал данного теста
-  [TestClass]
-  public class EmailTest
-  {
-    [TestMethod]
-    public void SendMail()
+    //TODO:Андрей Реализивать функционал данного теста
+    [TestClass]
+    public class EmailTest
     {
-      IEmailSender mail = new Email(null);
-      bool isSend = mail.Send();
-
-      Assert.IsTrue(isSend, "Отправка не удалась");
+        [TestMethod]
+        public void SendMail()
+        {
+            IEmailSender mail = new Email("Andry361@yandex.ru");     
+            mail.Send();
+            Assert.IsTrue(true, "Отправка не удалась");
+        }
     }
-  }
 }
