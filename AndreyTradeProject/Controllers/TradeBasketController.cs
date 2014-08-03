@@ -74,18 +74,18 @@ namespace AndreyTradeProject.Controllers
         };
 
         nextStock.IsSold = true;
-
         purchase.Stocks.Add(nextStock);
-
         _NhibernateSession.Save(purchase);
+       
+         
       }
 
       #region Отпрака email
-      
-
-      IEmailSender email = new Email(null);
+      //IEmailSender email = new Email(_NhibernateSession.Query<D_User>().FirstOrDefault());
+      IEmailSender email = new Email(Lib.Session.Default.GetCurrentUser(_NhibernateSession).Email);
+      email.Send(nextStock.Number);
       #endregion
-
+    
       return View("_Success");
     }
   }

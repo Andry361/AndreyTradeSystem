@@ -16,7 +16,7 @@ namespace AndreyTradeProject.Lib
     /// Отправить сообщение
     /// </summary>
     /// <returns>True - в случаи успешной отправки, false - в ином случаи</returns>
-      void Send();
+      void Send(string body);
   }
 
   public class Email : IEmailSender
@@ -30,12 +30,12 @@ namespace AndreyTradeProject.Lib
       _EmailAddress = sendAddress;
     }
 
-    public void Send()
+    public void Send(string body)
     {
         using (MailMessage mm = new MailMessage(_SendMailAdress, _EmailAddress))
         {
             mm.Subject = "Номер сертификата!";
-            mm.Body = "Mail Body";
+            mm.Body = body;
             mm.IsBodyHtml = false;
             using (SmtpClient sc = new SmtpClient("smtp.mail.ru", 25))
             {

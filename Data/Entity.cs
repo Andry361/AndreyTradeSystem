@@ -18,6 +18,7 @@ namespace Data
 
   public class D_User : D_BaseObject
   {
+    public virtual string Login { get; set; }
     public virtual string Name { get; set; }
     public virtual string Surname { get; set; }
     public virtual string Patronimic { get; set; }
@@ -61,6 +62,7 @@ namespace Data
   {
     public D_User_Map()
     {
+      Map(x => x.Login).Not.Nullable().Length(50);
       Map(x => x.Name).Not.Nullable().Length(255);
       Map(x => x.Surname).Not.Nullable().Length(255);
       Map(x => x.Patronimic).Not.Nullable().Length(255);

@@ -9,6 +9,8 @@ namespace AndreyTradeProject.Models
 {
   public class UserModel
   {
+    [Required(ErrorMessageResourceName = "UserModel__ValidationException_Login", ErrorMessageResourceType = typeof(AndreyTradeProject.Properties.GeneralResource))]
+    public string Login { get; set; }
     [Required(ErrorMessageResourceName = "UserModel__ValidationException_NameRequired", ErrorMessageResourceType = typeof(AndreyTradeProject.Properties.GeneralResource))]
     public string Name { get; set; }
     [Required]

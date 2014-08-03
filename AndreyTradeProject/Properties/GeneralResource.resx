@@ -123,6 +123,9 @@
   <data name="UserModel__ValidationException_EmailRequired" xml:space="preserve">
     <value>Необходимо заполнить поле email</value>
   </data>
+  <data name="UserModel__ValidationException_Login" xml:space="preserve">
+    <value>Необходимо заполнить поле логин</value>
+  </data>
   <data name="UserModel__ValidationException_NameRequired" xml:space="preserve">
     <value>Необходимо заполнить поле имя</value>
   </data>
