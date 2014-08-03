@@ -68,19 +68,5 @@ namespace AndreyTradeProject.Lib
       return _CurrentUser;
     }
     #endregion
-
-    #region Purchases
-    public IEnumerable<D_Purchase> GetPurchases(ISession session)
-    {
-      if (HttpContext.Current == null)
-        throw new ArgumentNullException("Http context is null");
-
-      List<Entity> entities = new List<Entity>();
-
-      IEnumerable<D_Purchase> purchases = session.Query<D_Purchase>().ToList();
-
-      return purchases;
-    }
-    #endregion
   }
 }

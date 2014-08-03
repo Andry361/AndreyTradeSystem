@@ -18,7 +18,7 @@ namespace AndreyTradeProject.Controllers
       TradeBasketModel model = new TradeBasketModel
       {
         User = AndreyTradeProject.Lib.Session.Default.GetCurrentUser(_NhibernateSession),
-        Purchases = AndreyTradeProject.Lib.Session.Default.GetPurchases(_NhibernateSession)
+        Entities = ((List<Entity>)Session["Purchases"])
       };
 
       return View(model);
@@ -76,15 +76,15 @@ namespace AndreyTradeProject.Controllers
         nextStock.IsSold = true;
         purchase.Stocks.Add(nextStock);
         _NhibernateSession.Save(purchase);
-       
+        #region Отпрака email
+        //IEmailSender email = new Email(_NhibernateSession.Query<D_User>().FirstOrDefault());
+        IEmailSender email = new Email(Lib.Session.Default.GetCurrentUser(_NhibernateSession).Email);
+        email.Send(nextStock.Number);
+        #endregion
          
       }
 
-      #region Отпрака email
-      //IEmailSender email = new Email(_NhibernateSession.Query<D_User>().FirstOrDefault());
-      IEmailSender email = new Email(Lib.Session.Default.GetCurrentUser(_NhibernateSession).Email);
-      email.Send(nextStock.Number);
-      #endregion
+  
     
       return View("_Success");
     }

@@ -2,26 +2,18 @@
     transition: all .5s;
     box-sizing: border-box;
 }
-body {
-    font: 1em 'PT Sans', Arial, Helvetica, sans-serif;
-}
-
 
 /* CSS Grid
 ===================================*/
 
 .containerList {
-	width: 940px;
+	width: 1024px;
 	margin: 0 auto;
 }
 
 .row {
 	margin-bottom: 20px;
 }
-
-
-
-
 
 .span1 	{	width:  60px }
 .span2 	{	width: 140px }
@@ -40,9 +32,12 @@ body {
 ===================================*/
 
 .slider1 {
-	height: 250px;
-	background: url(sale.jpg);
+	height: 477px;
+    width: 1024px;
+	background: url(slader_sale2.jpg);
 	box-shadow: 0 5px 5px rgba(0,0,0,.2);
+
+
 }
 
 

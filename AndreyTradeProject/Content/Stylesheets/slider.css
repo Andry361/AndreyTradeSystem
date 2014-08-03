@@ -1,10 +1,6 @@
 *{
     box-sizing: border-box;
 }
-body{
-     background: url(http://subtlepatterns.com/patterns/extra_clean_paper.png);
-     margin:0;
-}
 
 .container{
     position: relative;
@@ -26,11 +22,11 @@ body{
     border-radius: 5px;
     box-shadow: 0 7px 20px rgba(0,0,0,.5);
 }
-.img1 .frag{ background-image: url(start.jpg);}
-.img2 .frag{ background-image: url(certef.jpg);}
-.img3 .frag{ background-image: url(naysh.jpg);}
-.img4 .frag{ background-image: url(fon.jpg);}
-.img5 .frag{ background-image: url(fon.jpg);}
+.img1 .frag{ background-image: url(1.jpg);}
+.img2 .frag{ background-image: url(2.jpg);}
+.img3 .frag{ background-image: url(3.jpg);}
+.img4 .frag{ background-image: url(4.jpg);}
+.img5 .frag{ background-image: url(5.jpg);}
 .img6 .frag{ background-image: url(fon.jpg);}
 
 .frag{

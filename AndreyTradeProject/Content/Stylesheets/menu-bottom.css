@@ -1,4 +1,5 @@
 .contact {
+  position: absolute;
   left: 0;
   bottom: 0;
   width: 100%;
@@ -11,7 +12,6 @@
   margin-top: 80px;
   margin-bottom: 0px;
   text-transform: initial;
-  position: absolute;
 }
 
 .p {

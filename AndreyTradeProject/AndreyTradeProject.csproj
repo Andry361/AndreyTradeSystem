@@ -165,11 +165,22 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Stylesheets\1.jpg" />
+    <Content Include="Content\Stylesheets\blok_div.css" />
+    <Content Include="Content\Stylesheets\Images\3.jpg" />
+    <Content Include="Content\Stylesheets\Images\4.jpg" />
+    <Content Include="Content\Stylesheets\Images\5.jpg" />
+    <Content Include="Content\Stylesheets\Images\start.jpg" />
+    <Content Include="Content\slader_sale.jpg" />
+    <Content Include="Content\slader_sale2.jpg" />
     <Content Include="Content\Stylesheets\3D-Z-Axis-Rotation.png" />
     <Content Include="Content\Stylesheets\Autorize.css" />
     <Content Include="Content\Stylesheets\cart-alt-1.png" />
-    <Content Include="Content\Stylesheets\certef.jpg" />
     <Content Include="Content\Stylesheets\fon.jpg" />
+    <Content Include="Content\Stylesheets\fon_sait2.jpg" />
+    <Content Include="Content\Stylesheets\fon_sait3.jpg" />
+    <Content Include="Content\Stylesheets\fon_sait4.jpg" />
+    <Content Include="Content\Stylesheets\fon_saita.jpg" />
     <Content Include="Content\Stylesheets\home.png" />
     <Content Include="Content\Stylesheets\info.png" />
     <Content Include="Content\Stylesheets\link.png" />
@@ -180,8 +191,9 @@
     <Content Include="Content\Stylesheets\SaleList.css" />
     <Content Include="Content\Stylesheets\search.png" />
     <Content Include="Content\Stylesheets\settings.png" />
+    <Content Include="Content\Stylesheets\slader_sale.jpg" />
+    <Content Include="Content\Stylesheets\slader_sale2.jpg" />
     <Content Include="Content\Stylesheets\slider.css" />
-    <Content Include="Content\Stylesheets\start.jpg" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -221,7 +233,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

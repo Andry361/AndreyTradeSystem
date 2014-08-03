@@ -4,12 +4,14 @@
   ViewBag.Title = "Авторизация";
   Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
+<link href="~/Content/Stylesheets/Autorize.css" rel="stylesheet" />
 <div class="b-au">
   @using (Html.BeginForm())
   {
     @Html.EditorForModel()
 
-    <input type="submit" value="Отправить" />
+    <div class="b-d">
+        <input type="submit" value="Отправить" class="button1" />
+    </div>
   }
 </div><!--B: Autorization-->

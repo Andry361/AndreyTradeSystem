@@ -29,15 +29,10 @@
 
   @using (Html.BeginForm("PlaceAnOrder", "TradeBasket"))
   {
-    foreach (var group in Model.Purchases.GroupBy(x => x.User.Id))
+    foreach (var entity in Model.Entities)
     {
-      if (group.Count() == 0)
-      {
-        continue;
-      }
-
       <tr>
-        <td>@(group.ElementAt(0).User.Name)</td>
+        <td>@entity.User.Name)</td>
         <td>@group.Count()</td>
       </tr>
     }
