@@ -10,7 +10,7 @@ using AndreyTradeProject.Lib;
 
 namespace AndreyTradeProject.Controllers
 {
-  [AndreyTradeProject.Lib.Authorize]
+  [AndreyTradeProject.Lib.Authorize(UserType.User, UserType.Administrator)]
   public class TradeBasketController : AbstractController
   {
     public ActionResult Browse()
@@ -76,15 +76,14 @@ namespace AndreyTradeProject.Controllers
         nextStock.IsSold = true;
         purchase.Stocks.Add(nextStock);
         _NhibernateSession.Save(purchase);
+
         #region Отпрака email
-        //IEmailSender email = new Email(_NhibernateSession.Query<D_User>().FirstOrDefault());
         IEmailSender email = new Email(Lib.Session.Default.GetCurrentUser(_NhibernateSession).Email);
         email.Send(nextStock.Number);
         #endregion
-         
       }
 
-  
+      ((List<Entity>)Session["Purchases"]).Clear();
     
       return View("_Success");
     }

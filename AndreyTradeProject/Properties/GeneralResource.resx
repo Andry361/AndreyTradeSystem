@@ -129,6 +129,9 @@
   <data name="UserModel__ValidationException_NameRequired" xml:space="preserve">
     <value>Необходимо заполнить поле имя</value>
   </data>
+  <data name="UserModel__ValidationException_PhoneNUmberInvalid" xml:space="preserve">
+    <value>Неправильно заполнено поле телефонный номер</value>
+  </data>
   <data name="UserModel__ValidationException_PhoneNUmberRequired" xml:space="preserve">
     <value>Необходимо заполить поле телефонный номер</value>
   </data>

@@ -17,6 +17,8 @@ namespace AndreyTradeProject.Controllers
 
       _NhibernateSession = Data.NhibernateConfiguration.Default.SessionFactory.OpenSession();
       _NhibernateSession.BeginTransaction();
+
+      Lib.Session.NhibernateSession = _NhibernateSession;
     }
 
     protected override void Dispose(bool disposing)

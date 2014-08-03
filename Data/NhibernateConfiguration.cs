@@ -43,11 +43,46 @@ namespace Data
           lock (_Locker)
           {
             _DefaultObject = new NhibernateConfiguration();
+            _DefaultObject.CreateAdministratorUser();
           }
         }
 
         return _DefaultObject;
       }
     }
+
+    // Это уж совсем неправильно (
+    #region Начальные настройки
+    private void CreateAdministratorUser()
+    {
+      const string adminLogin = "admin_user";
+      const string adminEmail = "Hsmel73@mail.ru";
+
+      using (var session = SessionFactory.OpenSession())
+      {
+        using (var transaction = session.BeginTransaction())
+        {
+          D_User adminUser = session.QueryOver<D_User>().Where(x => x.Login == adminLogin).List().FirstOrDefault();
+
+          if (adminUser == null)
+          {
+            adminUser = new D_User
+            {
+              Email = adminEmail,
+              Login = adminLogin,
+              Name = "Андрей",
+              Patronimic = "Александрович",
+              PhoneNumber = "89251289044",
+              Surname = "Чмелев",
+              UserType = UserType.Administrator
+            };
+
+            session.Save(adminUser);
+            session.Transaction.Commit();
+          }
+        }
+      }
+    }
+    #endregion
   }
 }

@@ -68,5 +68,9 @@ namespace AndreyTradeProject.Lib
       return _CurrentUser;
     }
     #endregion
+
+    #region NhibernateSession
+    public static ISession NhibernateSession { get; set; }
+    #endregion
   }
 }

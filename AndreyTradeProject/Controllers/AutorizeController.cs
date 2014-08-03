@@ -46,5 +46,19 @@ namespace AndreyTradeProject.Controllers
       }
       return View(model);
     }
+
+    public ActionResult Logout()
+    {
+      HttpContext.Session.Remove("Id");
+
+      if (Request.UrlReferrer != null)
+      {
+        return Redirect(Request.UrlReferrer.ToString());
+      }
+      else
+      {
+        return null;
+      }
+    }
   }
 }

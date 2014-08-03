@@ -21,25 +21,16 @@
       }
 </style>
 
-<table style="width: 100%;">
-  <tr>
-    <td>Имя покупателя</td>
-    <td>Количество купленых сертификатов</td>
-  </tr>
+@{
+  var entitiesCount = Model.Entities != null ? Model.Entities.Count() : 0;
+}
 
-  @using (Html.BeginForm("PlaceAnOrder", "TradeBasket"))
-  {
-    foreach (var entity in Model.Entities)
-    {
-      <tr>
-        <td>@entity.User.Name)</td>
-        <td>@group.Count()</td>
-      </tr>
-    }
+<p>@String.Format("Вы купили {0} серитификатов", entitiesCount)</p>
 
-    <input type="hidden" name="stockCount" value="@Model.Purchases.Count()" />
-      
-    <input type="submit" value="Оформить" />
-  }
-</table>
+@using (Html.BeginForm("PlaceAnOrder", "TradeBasket"))
+{
+  <input type="hidden" name="stockCount" value="@entitiesCount" />
+
+  <input type="submit" value="Оформить" />
+}
 

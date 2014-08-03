@@ -16,15 +16,32 @@ namespace Data
     public virtual DateTime CreationDateTime { get; set; }
   }
 
+  #region User
   public class D_User : D_BaseObject
   {
+    public D_User()
+    {
+      UserType = Data.UserType.User;
+    }
+
     public virtual string Login { get; set; }
     public virtual string Name { get; set; }
     public virtual string Surname { get; set; }
     public virtual string Patronimic { get; set; }
     public virtual string Email { get; set; }
     public virtual string PhoneNumber { get; set; }
+    public virtual UserType UserType { get; set; }
   }
+
+  /// <summary>
+  /// Роль пользователя в системе
+  /// </summary>
+  public enum UserType : int
+  {
+    User = 1,
+    Administrator = 2
+  }
+  #endregion
 
   public class D_Stock : D_BaseObject
   {
@@ -68,6 +85,7 @@ namespace Data
       Map(x => x.Patronimic).Not.Nullable().Length(255);
       Map(x => x.Email).Not.Nullable().Length(100);
       Map(x => x.PhoneNumber).Not.Nullable().Length(20);
+      Map(x => x.UserType).CustomType<int>().Default("1");
     }
   }
 

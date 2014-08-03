@@ -37,6 +37,7 @@ namespace AndreyTradeProject.Lib
             mm.Subject = "Номер сертификата!";
             mm.Body = body;
             mm.IsBodyHtml = false;
+
             using (SmtpClient sc = new SmtpClient("smtp.mail.ru", 25))
             {
                 sc.EnableSsl = true;
