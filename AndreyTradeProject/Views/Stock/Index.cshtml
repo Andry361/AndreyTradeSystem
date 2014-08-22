@@ -2,44 +2,70 @@
     ViewBag.Title = "Акции";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-<div class="containerList">
-    <div class="row">
-    </div>
-    <div class="row">
-        <div class="slider1 span12"></div>
-    </div>  
-    <div class="row">
-        <div class="content span10">
-            <div class="b-bs">
-                <table class="b-bs__table">
-                    <tr class="b-ts__trade-item b-ts__trade-item_type_stock">
-                        <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/certef.jpg" alt="Сертификат" /></td>
-                        <td class="b-ts_description">Описание акции</td>
-                      <td class="b-ts__actions-wrapper">
-                        <a class="b-bs_action b-bs_action_type_buy"
-                        href="@Url.Action("AddEntity", "TradeBasket", new { entityType = AndreyTradeProject.Controllers.Entity._Type.Stock })" title="купить">Купить</a>
-                      </td>
-                    </tr>
-                    <tr class="b-ts__trade-item b-ts__trade-item_type_microphone">
-                        <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/naysh.jpg" alt="Сертификат" /></td>
-                        <td class="b-ts_description">Описание микронаушника</td>
-                        <td class="b-ts__actions-wrapper"><a class="b-bs_action b-bs_action_type_buy" 
-                                                             href="@Url.Action("AddEntity", "TradeBasket", new { entityType = AndreyTradeProject.Controllers.Entity._Type.Microphone })" title="купить">Купить</a></td>
-                    </tr>
-                    <tr class="b-ts__trade-item b-ts__trade-item_type_med">
-                        <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/fon.jpg" alt="Сертификат" /></td>
-                        <td class="b-ts_description">Описание меда</td>
-                        <td class="b-ts__actions-wrapper"><a class="b-bs_action b-bs_action_type_buy" href="#" title="купить">Купить</a></td>
-                    </tr>
-                </table>
+@*<link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>*@
+
+<div class="PosisionFoterStoke">
+    <div class="containerList">
+        <div class="row">
+        </div>
+        <div class="row">
+            <div class="slider1 span12"></div>
+        </div>
+        <div class="row">
+            <div class="content span10">
+                @*<div class="b-bs">
+                        <table class="b-bs__table">
+                            <tr class="b-ts__trade-item b-ts__trade-item_type_stock">
+                                <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/certef.jpg" alt="Сертификат" /></td>
+                                <td class="b-ts_description">Описание акции</td>
+                              <td class="b-ts__actions-wrapper">
+                                <a class="b-bs_action b-bs_action_type_buy"
+                                href="@Url.Action("AddEntity", "TradeBasket", new { entityType = AndreyTradeProject.Controllers.Entity._Type.Stock })" title="купить">Купить</a>
+                              </td>
+                            </tr>
+                            <tr class="b-ts__trade-item b-ts__trade-item_type_microphone">
+                                <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/naysh.jpg" alt="Сертификат" /></td>
+                                <td class="b-ts_description">Описание микронаушника</td>
+                                <td class="b-ts__actions-wrapper"><a class="b-bs_action b-bs_action_type_buy"
+                                                                     href="@Url.Action("AddEntity", "TradeBasket", new { entityType = AndreyTradeProject.Controllers.Entity._Type.Microphone })" title="купить">Купить</a></td>
+                            </tr>
+                            <tr class="b-ts__trade-item b-ts__trade-item_type_med">
+                                <td class="b-ts__icon"><img width="240px" height="120px" src="../../Content/Stylesheets/fon.jpg" alt="Сертификат" /></td>
+                                <td class="b-ts_description">Описание меда</td>
+                                <td class="b-ts__actions-wrapper"><a class="b-bs_action b-bs_action_type_buy" href="#" title="купить">Купить</a></td>
+                            </tr>
+                        </table>
+                    </div>*@
+            </div>
+            <div class="info-text">
+                <div class="b-0">
+                    ООО Люцида, учитывая современные сложности в сфере трудоустройства, как никто другой поможет вам справиться с нелегкой задачей поиска работы. Наша организация обеспечит вам выгодный и надежный вариант решения этой проблемы. Как генеральный партнер "Московского кадрового агентства", мы предлагаем вам приобрести сертификаты по трудоустройству. Что такое сертификат по трудоустройству?
+                    Это документ, который обеспечит вам гарантированное устройство на работу, согласно вашим потребностям и возможностям! Как именно? Это:
+                    <ul>
+                        <li>Cоставление профессионального резюме;</li>
+                        <li>Размещение резюме в специализированных средствах массовой информации;</li>
+                        <li>Предоставление персонального менеджера на период 60 календарных дней с момента активации услуги (44 дня без учета выходных и праздников);</li>
+                        <li>Формирование и составление плана мероприятий процесса трудоустройства с четом пожеланий заказчика;</li>
+                        <li>Анализ рынка труда по имеющимся вакансиям, конкурсе на рабочее место, уровне зарплаты по выбранной специализации, и другим видам запросов, исходя из пожеланий заказчика;</li>
+                        <li>Взаимодействие с работодателями на предмет актуальности вакансий, соответствии заявленным условиям и требованиям, а так же обсуждения, если потребуется резюме заказчика и согласование даты и время собеседования;</li>
+                        <li>Ежедневная отчетность по результатам деятельности исполнителя;</li>
+                        <li>Доступ к специально созданным аккаунтам по управлению резюме на специализированных информационных носителях, право владения созданным резюме;</li>
+                        <li>Инструкция пользования специализированными аккаунтами по управлению резюме;</li>
+                        <li>Предоставление консультаций по вопросам трудоустройства в полном объеме.</li>
+                    </ul>     
+                     ООО Люцида предлагает вам приобрести сертификат с индивидуальным номером по акции со скидкой 37,5%, сэкономив 3000 рублей. Мы будем рады помочь вам. Обратите внимание, что предложение ограничено!
+                </div>
+                <div class="b-1"><img src="~/Content/Stylesheets/TextList1.jpg" class="TextListImg1" /></div>
+                <div class="b-2">Процесс трудоустройства - дело непростое. Процесс трудоустройства на работу Вашей мечты с оплатой, достойной вашего опыта, в краткий срок - дело откровенно сложное. Агентство по трудоустройству поможет вам: оно предоставит соискателям полный пакет услуг, который приведет к желаемому результату. На рынке труда конкуренция всегда была, есть и будет очень высокой. Именно поэтому знания и опыт в этой области столь высоко ценятся, особенно сегодня. Сотрудники агентства по трудоустройству (иногда оно называется кадровым агентством, но обязательно с уточнением "оказание услуг соискателю") ежедневно сталкиваются и с работодателями и с соискателями; стало быть прекрасно ориентируются в трендах и сегодняшних реалиях рынка труда. Богатый многолетний опыт позволяет специалистам агентства по трудоустройству квалифированно и профессионально исполнять свои обязанности.</div>
+                <div class="b-3"><img src="~/Content/Stylesheets/TextList2.jpg" class="TextListImg2" /></div>
+                <div class="b-4">Деятельность агентства по трудоустройству многократно увеличивает шансы соискателя на получение желаемой вакансии: ведь кандидат в полном объеме получает консультационную и посредническую помощь. Не менее важно и то, что работодатель, запрашивая от агентства информацию о своем потенциальном работнике, получает ее в наиболее качественном виде: агентство представляет соискателя именно профессионально, не забывая упомянуть ни об одном из достоинств кандидата. Но для этого необходимо владеть актуальной информацией о рынке и понимать, какие качества и навыки работников являются на сегодняшний день наиболее востребованными. Рано или поздно проблема трудоустройства приходит в жизнь каждого человека. Процесс поиска новой работы - это целая система фактов, знаний и действий. Агентство по трудоустройству делится с вами информацией и знаниями о рынке труда, имея большой опыт решения вопросов трудоустройства.</div>
+                <div class="b-5"><img src="~/Content/Stylesheets/TextList3.jpg" class="TextListImg3" /></div>
+                <div class="b-6">Агентство создает для вас эффективную рекламу, которая работает и приносит результат. Начинать поиск работы необходимо с "настройки" себя под рынок труда, но никак не наоборот. Необходимо основательно подготовиться, изучив ситуацию на рынке труда. Не всегда и не везде услуги по трудоустройству оказываются качественно. Обращайте внимание на объем услуг и другие прямые и косвенные признаки качества работы агентства. Если вы искали работу самостоятельно и поиск не принес желаемого результата, не отчаивайтесь. Вы просто нуждаетесь в услугах квалифицированных специалистов. Поиск новой работы - это тоже работа, порой не менее трудная и ответственная, чем ваша основная профессия. Результат будет зависеть от Ваших стараний, Ваших вложений и Ваших решений.</div>
+                <div class="b-7"><a class="b-bs_action b-bs_action_type_buy" href="@Url.Action("AddEntity", "TradeBasket", new { entityType = AndreyTradeProject.Controllers.Entity._Type.Stock })" title="купить"><input type="button" class="ButtonBuy" value="Купить"></a></div>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="footer span12"><small>2014 © Акции от 27.07.2014</small></div>
-    </div>
 </div>
-
 
 
 

@@ -120,6 +120,12 @@
   <data name="PurchaseAnOrder__Exception_NoFreStocks" xml:space="preserve">
     <value>Нету свободных сертификатов на данный момент</value>
   </data>
+  <data name="UserModel__ValidationException_Password" xml:space="preserve">
+    <value>Необходимо заполнить поле Пароль</value>
+  </data>
+  <data name="UserModel__ValidationException_EmailInValit" xml:space="preserve">
+    <value>Неправельный формат email</value>
+  </data>
   <data name="UserModel__ValidationException_EmailRequired" xml:space="preserve">
     <value>Необходимо заполнить поле email</value>
   </data>
@@ -134,5 +140,8 @@
   </data>
   <data name="UserModel__ValidationException_PhoneNUmberRequired" xml:space="preserve">
     <value>Необходимо заполить поле телефонный номер</value>
+  </data>
+  <data name="UserModel__ValidationException_PhoneInValit" xml:space="preserve">
+    <value>Неправельный формат телефонного номера</value>
   </data>
 </root>

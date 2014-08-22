@@ -26,14 +26,17 @@ namespace AndreyTradeProject.Controllers
         }
         else
         {
+            //UserType s = User;
             D_User d_user = new D_User
             {
                 Login = model.Login,
+                Password = model.Password,
                 Name = model.Name,
                 Patronimic = model.Patronimic,
                 Surname = model.Surname,
                 Email = model.Email,
-                PhoneNumber = model.PhoneNumber
+                PhoneNumber = model.PhoneNumber,
+                UserType = UserType.User
             };
 
             _NhibernateSession.Save(d_user);
@@ -47,6 +50,28 @@ namespace AndreyTradeProject.Controllers
       return View(model);
     }
 
+    public ActionResult Identification(IdentificationModel model)
+    {
+
+        if (Request.HttpMethod == "POST" && ModelState.IsValid)
+        {
+
+            model = model ?? new IdentificationModel();
+            
+            bool isExists = _NhibernateSession.Query<D_User>().Any(x => (x.Login == model.Login));
+            //че то жесть!!!!..
+            //bool isExistsNaxNeTak = _NhibernateSession.Query<D_User>().Any(x => (x.Password == model.Password));
+            //if (isExists && isExistsNaxNeTak)
+            if (isExists)
+                {
+                    D_User user = _NhibernateSession.Query<D_User>().Where(x => x.Login == model.Login).FirstOrDefault();
+                    HttpContext.Session.Add("Id", user.Id);
+                    return Redirect(Url.Action("Index", "Stock"));
+                }
+            
+        }
+        return View(model);
+    }
     public ActionResult Logout()
     {
       HttpContext.Session.Remove("Id");

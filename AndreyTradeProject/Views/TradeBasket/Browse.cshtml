@@ -5,32 +5,19 @@
   Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<style>
-  table {
-    margin: 50px 0;
-    width: 100%;
-  }
-
-    table tr {
-      height: 25px;
-      line-height: 25px;
-    }
-
-      table tr:nth-child(2n) {
-        background-color: rgb(245, 245, 245);
-      }
-</style>
 
 @{
   var entitiesCount = Model.Entities != null ? Model.Entities.Count() : 0;
 }
+<link href="~/Content/Stylesheets/Browse.css" rel="stylesheet" />
+<div class="PosisionFoterTradeBasketBrowse">
+    <div class="BastkeWindow">
+        <div class="t-1">Вы купили @entitiesCount серитификатов </div>
 
-<p>@String.Format("Вы купили {0} серитификатов", entitiesCount)</p>
-
-@using (Html.BeginForm("PlaceAnOrder", "TradeBasket"))
-{
-  <input type="hidden" name="stockCount" value="@entitiesCount" />
-
-  <input type="submit" value="Оформить" />
-}
-
+        @using (Html.BeginForm("PlaceAnOrder", "TradeBasket"))
+        {
+            <input type="hidden" name="stockCount" value="@entitiesCount" />
+            <input type="submit" value="Оформить" />
+        }
+    </div>
+</div>

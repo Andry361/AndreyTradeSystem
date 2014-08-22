@@ -35,7 +35,7 @@ namespace AndreyTradeProject.Lib
         using (MailMessage mm = new MailMessage(_SendMailAdress, _EmailAddress))
         {
             mm.Subject = "Номер сертификата!";
-            mm.Body = body;
+            mm.Body = "Услуга оказывается ЗАО\"Интеренэшнл Маркетинг Групп Фарм\", \nОГРН 1037789083133\nwww.jobagent.msk.ru\nСтоймость индевидуального номера сертификата 5000р, в т. ч. НДС 18%\nАктивировать до 31.12.2015 г.\nВаш индивидуальный номер: " + body + ". Не показываете его третим лицам!\nДля активации услуги необходимо направить письмо по адресу info@jobagent.msk.ru или\nпозвонить по телефону: 8 (495) 998-59-99, сообщить дату выдачи сертификата, его номер и период\nактивации.";
             mm.IsBodyHtml = false;
 
             using (SmtpClient sc = new SmtpClient("smtp.mail.ru", 25))

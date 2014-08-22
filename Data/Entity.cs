@@ -25,12 +25,14 @@ namespace Data
     }
 
     public virtual string Login { get; set; }
+    public virtual string Password { get; set; }
     public virtual string Name { get; set; }
     public virtual string Surname { get; set; }
     public virtual string Patronimic { get; set; }
     public virtual string Email { get; set; }
     public virtual string PhoneNumber { get; set; }
     public virtual UserType UserType { get; set; }
+
   }
 
   /// <summary>
@@ -80,6 +82,7 @@ namespace Data
     public D_User_Map()
     {
       Map(x => x.Login).Not.Nullable().Length(50);
+      Map(x => x.Password).Not.Nullable().Length(50);
       Map(x => x.Name).Not.Nullable().Length(255);
       Map(x => x.Surname).Not.Nullable().Length(255);
       Map(x => x.Patronimic).Not.Nullable().Length(255);

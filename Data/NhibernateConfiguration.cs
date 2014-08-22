@@ -68,13 +68,14 @@ namespace Data
           {
             adminUser = new D_User
             {
-              Email = adminEmail,
+              Email = adminEmail,              
               Login = adminLogin,
               Name = "Андрей",
               Patronimic = "Александрович",
               PhoneNumber = "89251289044",
               Surname = "Чмелев",
-              UserType = UserType.Administrator
+              UserType = UserType.Administrator,
+              Password = "180992nen"
             };
 
             session.Save(adminUser);

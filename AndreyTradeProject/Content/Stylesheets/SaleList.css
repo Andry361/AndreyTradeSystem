@@ -3,9 +3,6 @@
     box-sizing: border-box;
 }
 
-/* CSS Grid
-===================================*/
-
 .containerList {
 	width: 1024px;
 	margin: 0 auto;
@@ -15,35 +12,101 @@
 	margin-bottom: 20px;
 }
 
-.span1 	{	width:  60px }
-.span2 	{	width: 140px }
-.span3 	{	width: 220px }
-.span4 	{	width: 300px }
-.span5 	{	width: 380px }
-.span6 	{	width: 460px }
-.span7 	{	width: 540px }
-.span8 	{	width: 620px }
-.span9 	{	width: 700px }
-.span10 {	width: 780px }
-.span11 {	width: 860px }
-.span12 {	width: 940px }
-
-/* Main
-===================================*/
 
 .slider1 {
 	height: 477px;
     width: 1024px;
 	background: url(slader_sale2.jpg);
 	box-shadow: 0 5px 5px rgba(0,0,0,.2);
-
-
 }
 
 
-.footer {
-	color: #444;
-	text-align: center;
-	border-top: 1px dashed #888;
-	padding: 40px 0;
+.info-text{
+    font-family: 'Segoe UI';
+    text-transform: initial;
+    width: 1024px;
+    height: 1408px;
+    font-style: italic;
+    border-radius: 10px;
+    background-image: linear-gradient(to top, rgba(7,252,89,.1),rgba(239, 63, 109,.6), rgba(7,252,89,.1),
+                      rgba(7,252,89,0.8),rgba(7,252,89,.1), rgba(253, 255, 12,.6));
+    box-shadow: 0 5px 5px rgba(0,0,0,.2);
+}
+
+.TextListImg1 {
+   margin-left: 32px;
+   margin-top: 15px;
+}
+.TextListImg2 {
+   margin-left: 27px;
+   margin-top: 15px;
+}
+.TextListImg3 {
+   margin-left: 32px;
+   margin-top: 15px;
+}
+
+.b-2, .b-4, .b-6 {
+    margin-left: 32px;
+    margin-right: 32px;
+    text-align: justify;
+    margin-top: 11px;
+    margin-bottom: 20px;
+}
+.b-1, .b-5 {
+    width: 463px;
+    height: 181px;
+    float: left;
+}
+.b-3 {
+    width: 479px;
+    height: 181px;
+    float: right;
+}
+.b-0 {
+    margin-left: 32px;
+    margin-right: 32px;
+    text-align: justify;
+}
+
+.b-7 {
+   margin:0 auto;
+   width: 132px;
+}
+input.ButtonBuy {
+  position: relative;
+ 
+  margin: 10px auto;
+  font-family: Arial,Helvetica,FreeSans,"Liberation Sans","Nimbus Sans L",sans-serif;
+  font-size: 1.5em;
+  font-weight: 700;
+  color: rgb(245,245,245);
+  text-shadow: 0 -1px rgba(0,0,0,.1);
+  text-decoration: none;
+  user-select: none;
+  padding: .3em 1em;
+  outline: none;
+  border: none;
+  border-radius: 3px;
+  background: #0c9c0d linear-gradient(#82d18d, #0c9c0d);
+  box-shadow: inset #72de26 0 -1px 1px, inset 0 1px 1px #98ff98, #3caa3c 0 0 0 1px, rgba(0,0,0,.3) 0 2px 5px;
+  -webkit-animation: pulsate 1.2s linear infinite;
+  animation: pulsate 1.2s linear infinite;
+}
+input.ButtonBuy:hover {
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+  cursor: pointer;
+}
+input.ButtonBuy:active {
+  top: 1px;
+  color: #fff;
+  text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;
+  box-shadow: 0 -1px 3px rgba(0,0,0,.3), 0 1px 1px #fff, inset 0 1px 2px rgba(0,0,0,.8), inset 0 -1px 0 rgba(0,0,0,.05);
+}
+@-webkit-keyframes pulsate {
+  50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
+}
+@keyframes pulsate {
+  50% {color: #fff; text-shadow: 0 -1px rgba(0,0,0,.3), 0 0 5px #ffd, 0 0 8px #fff;}
 }

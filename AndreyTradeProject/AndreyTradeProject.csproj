@@ -154,6 +154,7 @@
     <Compile Include="Lib\Email.cs" />
     <Compile Include="Lib\Excel.cs" />
     <Compile Include="Lib\Session.cs" />
+    <Compile Include="Models\IdentificationModel.cs" />
     <Compile Include="Models\PurchaseListModel.cs" />
     <Compile Include="Models\TradeBasketModel.cs" />
     <Compile Include="Models\UserModel.cs" />
@@ -167,6 +168,7 @@
   <ItemGroup>
     <Content Include="Content\Stylesheets\1.jpg" />
     <Content Include="Content\Stylesheets\blok_div.css" />
+    <Content Include="Content\Stylesheets\Browse.css" />
     <Content Include="Content\Stylesheets\Images\3.jpg" />
     <Content Include="Content\Stylesheets\Images\4.jpg" />
     <Content Include="Content\Stylesheets\Images\5.jpg" />
@@ -194,6 +196,9 @@
     <Content Include="Content\Stylesheets\slader_sale.jpg" />
     <Content Include="Content\Stylesheets\slader_sale2.jpg" />
     <Content Include="Content\Stylesheets\slider.css" />
+    <Content Include="Content\Stylesheets\TextList1.jpg" />
+    <Content Include="Content\Stylesheets\TextList2.jpg" />
+    <Content Include="Content\Stylesheets\TextList3.jpg" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.8.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
@@ -230,6 +235,9 @@
     <Content Include="Views\Autorize\Index.cshtml" />
     <Content Include="Views\TradeBasket\_Success.cshtml" />
     <Content Include="Views\PurchaseList\List.cshtml" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Autorize\Identification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
