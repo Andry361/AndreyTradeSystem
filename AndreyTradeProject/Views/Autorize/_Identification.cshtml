@@ -1,0 +1,55 @@
+﻿@model AndreyTradeProject.Models.IdentificationModel
+
+<link href="~/Content/Stylesheets/Autorize.css" rel="stylesheet" />
+
+<div class="b-au">
+
+  <div class="b-au__wrapper b-au__wrapper_registered_@(Model.IsAuthorized ? "registtred" : "unregistred")">
+    @if (!Model.IsAuthorized)
+    {
+      using (Html.BeginForm("Identification", "Autorize"))
+      {
+        <div class="b-au__field b-au__field_value-type_login">
+          <span class="b-au__legend editor-label">Логин</span>
+
+          <div class="editor-field">
+            @Html.TextBoxFor(x => x.Login)
+            @Html.ValidationMessageFor(x => x.Login)
+          </div>
+        </div>
+
+        <div class="b-au__field b-au__field_value-type_password">
+          <span class="b-au__legend editor-label">Пароль</span>
+
+          <div class="editor-field">
+            @Html.PasswordFor(x => x.Password)
+            @Html.ValidationMessageFor(x => x.Password)
+          </div>
+        </div>
+
+        <input type="submit" title="Авторизоваться" value="Авторизоваться" />
+
+        <a href="/Autorize/Index" title="Зарегестрироваться">Зарегестрироваться</a>
+      }
+    }
+    else
+    {
+      <div class="b-au__user-info-item b-au__user-info-item_value-content_name">
+        <span class="b-au__legend">Имя</span>
+        <span class="b-au__value">@Model.User.Name</span>
+      </div>
+
+      <div class="b-au__user-info-item b-au__user-info-item_value-content_surname">
+        <span class="b-au__legend">Фамилия</span>
+        <span class="b-au__value">@Model.User.Surname</span>
+      </div>
+
+      <div class="b-au__user-info-item b-au__user-info-item_value-content_patronimic">
+        <span class="b-au__legend">Отчество</span>
+        <span class="b-au__value">@Model.User.Patronimic</span>
+      </div>
+
+      <a href="/Autorize/Logout" title="Выйти">Выйти</a>
+    }
+  </div>
+</div><!--B: Autorization-->

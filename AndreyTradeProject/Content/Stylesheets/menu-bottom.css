@@ -1,7 +1,6 @@
 .contact {
-  position: relative;
-  left: 0;
-  bottom: 0;
+  position: absolute;
+  left: 0; bottom: 0;
   width: 100%;
   font-family: "PT Sans", Tahoma, Arial;
   font-size: 10px;
@@ -9,8 +8,6 @@
   background-color: #272222;
   border-top: 3px solid #0a0a0a;
   height: 60px;
-  margin-top: 80px;
-  margin-bottom: 0px;
   text-transform: initial;
 }
 
@@ -27,19 +24,4 @@
 .p1 {
   margin-right: 20px;
   float: right;
-}
-.PosisionFoter {
-    width: 100%;
-    height: 500px;
-}
-.PosisionFoterStoke{
-    height:1650px;
-}
-
-.PosisionFoterAboutCompany {
-    height:700px;
-}
-.PosisionFoterTradeBasketBrowse {
-    width: 100%%;
-    height: 400px;
 }

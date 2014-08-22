@@ -15,8 +15,19 @@ namespace AndreyTradeProject.Controllers
     {
       base.Initialize(requestContext);
 
+      
       _NhibernateSession = Data.NhibernateConfiguration.Default.SessionFactory.OpenSession();
       _NhibernateSession.BeginTransaction();
+
+
+      var currentUser = Lib.Session.Default.GetCurrentUser(_NhibernateSession);
+      var model = new AndreyTradeProject.Models.IdentificationModel
+      {
+        IsAuthorized = currentUser != null ? true : false,
+        User = currentUser
+      };
+
+      ViewData["IdentificationModel"] = model;
 
       Lib.Session.NhibernateSession = _NhibernateSession;
     }

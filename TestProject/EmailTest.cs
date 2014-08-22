@@ -17,7 +17,7 @@ namespace TestProject
         public void SendMail()
         {
             IEmailSender mail = new Email("Andry361@yandex.ru");     
-            mail.Send();
+            //mail.Send();
             Assert.IsTrue(true, "Отправка не удалась");
         }
     }

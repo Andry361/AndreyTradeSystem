@@ -8,43 +8,45 @@
   <link href="~/Content/Stylesheets/main.css" rel="stylesheet" />
   <link href="~/Content/Stylesheets/slider.css" rel="stylesheet" />
   <link href="~/Content/Stylesheets/menu-bottom.css" rel="stylesheet" />
-  <link href="~/Content/Stylesheets/SaleList.css" rel="stylesheet" />   
-    <link href="~/Content/Stylesheets/blok_div.css" rel="stylesheet" />
-  
+  <link href="~/Content/Stylesheets/SaleList.css" rel="stylesheet" />
+  <link href="~/Content/Stylesheets/blok_div.css" rel="stylesheet" />
+
   <meta name="description" content="CSS Slider">
   <title>CSS Slider</title>
 </head>
 
 <body>
-  @Html.ValidationSummary(true)
-  
-  <div class="container-div">
-    <ul class="nav">
-      <li class="main-menu">
-        <a href="@Url.Action("Index", "Home")" title="Главная страница">Главная страница</a>
-      </li>
-      <li class="settings">
-        <a href="@Url.Action("Index", "Stock")" title="Акции дня">Акция дня</a>
-      </li>
-      <li class="link">
-        <a href="@Url.Action("Index", "AboutCompany")" title="О компании">О компании</a>
-      </li>
-      <li class="search">
-        <a id="karz" href="@Url.Action("Browse", "TradeBasket")" title="Корзина">Карзина</a>
-      </li>
-    </ul>
-  </div>
-  <!-- Слайдер !!!!!!!!!!!!!!!!!!!! -->
-        @RenderBody()
+  <div class="main-content-wrapper">
+    @Html.ValidationSummary(true)
 
- 
+    <div class="container-div">
+      <ul class="nav">
+        <li class="main-menu">
+          <a href="@Url.Action("Index", "Home")" title="Главная страница">Главная страница</a>
+        </li>
+        <li class="settings">
+          <a href="@Url.Action("Index", "Stock")" title="Акции дня">Акция дня</a>
+        </li>
+        <li class="link">
+          <a href="@Url.Action("Index", "AboutCompany")" title="О компании">О компании</a>
+        </li>
+        <li class="search">
+          <a id="karz" href="@Url.Action("Browse", "TradeBasket")" title="Корзина">Карзина</a>
+        </li>
+      </ul>
+    </div>
 
-    <div class="svob_div"></div>
-  <div class="contact">
-    <p class="p p1">Версия от 26.07.2014.</p>
-    <p class="p p2">Компания ООО "Люцида".</p>
-    <p class="p p3">Номер телефона: 8-825-128-90-44.</p>    
-  </div>
+    @Html.Partial("~/Views/Autorize/_Identification.cshtml", (AndreyTradeProject.Models.IdentificationModel)ViewData["IdentificationModel"])
+
+    @RenderBody()
+
+
+    <div class="contact">
+      <p class="p p1">Версия от 26.07.2014.</p>
+      <p class="p p2">Компания ООО "Люцида".</p>
+      <p class="p p3">Номер телефона: 8-825-128-90-44.</p>
+    </div>
+  </div>  
 
   <script src="http://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.6/prefixfree.min.js"></script>
   <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>

@@ -13,7 +13,7 @@ namespace AndreyTradeProject.Controllers
   {
     public ActionResult Index(UserModel model)
     {
-      model = model ?? new UserModel(); 
+      model = model ?? new UserModel();
 
       if (Request.HttpMethod == "POST" && ModelState.IsValid)
       {
@@ -21,56 +21,61 @@ namespace AndreyTradeProject.Controllers
 
         if (isExists)
         {
-            D_User user = _NhibernateSession.Query<D_User>().Where(x => x.Login == model.Login).FirstOrDefault();
-            HttpContext.Session.Add("Id", user.Id);
+          D_User user = _NhibernateSession.Query<D_User>().Where(x => x.Login == model.Login).FirstOrDefault();
+          HttpContext.Session.Add("Id", user.Id);
         }
         else
         {
-            //UserType s = User;
-            D_User d_user = new D_User
-            {
-                Login = model.Login,
-                Password = model.Password,
-                Name = model.Name,
-                Patronimic = model.Patronimic,
-                Surname = model.Surname,
-                Email = model.Email,
-                PhoneNumber = model.PhoneNumber,
-                UserType = UserType.User
-            };
+          //UserType s = User;
+          D_User d_user = new D_User
+          {
+            Login = model.Login,
+            Password = model.Password,
+            Name = model.Name,
+            Patronimic = model.Patronimic,
+            Surname = model.Surname,
+            Email = model.Email,
+            PhoneNumber = model.PhoneNumber,
+            UserType = UserType.User
+          };
 
-            _NhibernateSession.Save(d_user);
+          _NhibernateSession.Save(d_user);
 
-            #region Авторизация
-            HttpContext.Session.Add("Id", d_user.Id);
-            #endregion
+          #region Авторизация
+          HttpContext.Session.Add("Id", d_user.Id);
+          #endregion
         }
         return Redirect(Url.Action("Index", "Stock"));
       }
       return View(model);
     }
 
-    public ActionResult Identification(IdentificationModel model)
+    public ActionResult Identification()
     {
+      ModelState.Clear();
 
-        if (Request.HttpMethod == "POST" && ModelState.IsValid)
+      var model = (IdentificationModel)ViewData["IdentificationModel"];
+
+      TryUpdateModel<IdentificationModel>(model);
+
+      if (Request.HttpMethod == "POST" && ModelState.IsValid)
+      {
+        bool isExists = _NhibernateSession.Query<D_User>().Any(x => (x.Login == model.Login));
+        //че то жесть!!!!..
+        //bool isExistsNaxNeTak = _NhibernateSession.Query<D_User>().Any(x => (x.Password == model.Password));
+        //if (isExists && isExistsNaxNeTak)
+        if (isExists)
         {
+          D_User user = _NhibernateSession.Query<D_User>().Where(x => x.Login == model.Login).FirstOrDefault();
+          HttpContext.Session.Add("Id", user.Id);
 
-            model = model ?? new IdentificationModel();
-            
-            bool isExists = _NhibernateSession.Query<D_User>().Any(x => (x.Login == model.Login));
-            //че то жесть!!!!..
-            //bool isExistsNaxNeTak = _NhibernateSession.Query<D_User>().Any(x => (x.Password == model.Password));
-            //if (isExists && isExistsNaxNeTak)
-            if (isExists)
-                {
-                    D_User user = _NhibernateSession.Query<D_User>().Where(x => x.Login == model.Login).FirstOrDefault();
-                    HttpContext.Session.Add("Id", user.Id);
-                    return Redirect(Url.Action("Index", "Stock"));
-                }
-            
+          model.IsAuthorized = true;
+
+          return Redirect(Url.Action("Index", "Stock"));
         }
-        return View(model);
+      }
+
+      return View(model);
     }
     public ActionResult Logout()
     {
@@ -78,7 +83,7 @@ namespace AndreyTradeProject.Controllers
 
       if (Request.UrlReferrer != null)
       {
-        return Redirect(Request.UrlReferrer.ToString());
+        return Redirect(Url.Action("Index", "Home"));
       }
       else
       {

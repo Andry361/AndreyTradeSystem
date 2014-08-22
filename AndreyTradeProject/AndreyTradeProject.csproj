@@ -235,9 +235,7 @@
     <Content Include="Views\Autorize\Index.cshtml" />
     <Content Include="Views\TradeBasket\_Success.cshtml" />
     <Content Include="Views\PurchaseList\List.cshtml" />
-    <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Autorize\Identification.cshtml" />
+    <Content Include="Views\Autorize\_Identification.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
